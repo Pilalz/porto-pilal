@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Rafi Pilal | Software Engineer & Web Developer",
+  title: "Rafi Hilal Zahir | Software Engineer & Web Developer",
   description:
-    "Portofolio pribadi Muhammad Rafi Pilal - Software Engineer & Web Developer yang berfokus pada Next.js, TypeScript, React, dan modern web performance.",
+    "Portofolio pribadi Rafi Hilal Zahir - Software Engineer & Web Developer yang berfokus pada Next.js, TypeScript, React, dan modern web performance.",
   keywords: [
     "Portfolio",
     "Web Developer",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     "TypeScript",
     "React",
     "Tailwind CSS",
-    "Rafi Pilal",
+    "Rafi Hilal Zahir",
   ],
-  authors: [{ name: "Muhammad Rafi Pilal" }],
+  authors: [{ name: "Rafi Hilal Zahir" }],
 };
 
 export default function RootLayout({
