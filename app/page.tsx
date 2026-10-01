@@ -76,7 +76,7 @@ export default function HomePage() {
         </div>
 
         {/* Stats Strip with hover highlight */}
-        <div className="animate-fade-in-up mt-8 grid w-full grid-cols-2 gap-4 border-y border-zinc-200/80 py-6 sm:grid-cols-4 [animation-delay:300ms] dark:border-zinc-800/80">
+        {/* <div className="animate-fade-in-up mt-8 grid w-full grid-cols-2 gap-4 border-y border-zinc-200/80 py-6 sm:grid-cols-4 [animation-delay:300ms] dark:border-zinc-800/80">
           {personalInfo.stats.map((stat) => (
             <div
               key={stat.label}
@@ -88,7 +88,7 @@ export default function HomePage() {
               <p className="text-xs text-zinc-500 dark:text-zinc-400">{stat.label}</p>
             </div>
           ))}
-        </div>
+        </div> */}
       </section>
 
       {/* Core Tech Stack Section */}

@@ -4,11 +4,14 @@ export interface Project {
   description: string;
   longDescription?: string;
   tags: string[];
-  category: "Web App" | "Mobile App" | "Full Stack" | "UI/UX";
+  category: "Web App" | "Mobile App" | "UI/UX" ;
   liveUrl?: string;
   githubUrl?: string;
   featured: boolean;
   year: string;
+  imageUrl?: string;
+  images?: string[];
+  videoUrl?: string;
 }
 
 export interface Experience {
@@ -30,7 +33,7 @@ export interface Achievement {
   date: string;
   credentialUrl?: string;
   description: string;
-  badgeType: "Certification" | "Award" | "Hackathon";
+  badgeType: "Certification" | "Award" | "Competition";
 }
 
 export interface EducationItem {
@@ -77,6 +80,7 @@ export const featuredTechStack = [
   "Next.js",
   "Express.js",
   "React",
+  "TypeScript",
   "Tailwind CSS",
   "Node.js",
   "PostgreSQL",
@@ -86,15 +90,19 @@ export const featuredTechStack = [
 
 export const projectsData: Project[] = [
   {
-    id: "greenhouse",
-    title: "Greenhouse",
-    description: "Portal showcase modern Teaching Factory Greenhouse SV IPB dengan integrasi teknologi Smart Agriculture 4.0, katalog produk riset, dan layanan pelatihan agribisnis.",
-    tags: ["Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    category: "Full Stack",
-    liveUrl: "https://example.com/omnicommerce",// Gada
-    githubUrl: "https://github.com/Pilalz/greenhouse-web",
-    featured: true,
-    year: "2026",
+    id: "flexipay",
+    title: "FlexiPay",
+    description: "Portal showcase modern untuk implementasi sistem pembayaran digital dengan berbagai metode pembayaran.",
+    tags: ["Figma", "UI/UX"],
+    category: "UI/UX",
+    liveUrl: "https://youtu.be/9xah45t_4YA?feature=shared",
+    githubUrl: "https://www.figma.com/design/O0lEbEWglWTvTc9jP1vT6z/KRRAN?node-id=7-4&t=6xDLgBqMQ30TaW9W-1",
+    featured: false,
+    year: "2023",
+    images: [
+      "/projects/flexipay/1.png",
+      "/projects/flexipay/2.png"
+    ],
   },
   {
     id: "krafs",
@@ -106,6 +114,11 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/Pilalz/KRAFS-MOBILE",
     featured: true,
     year: "2023",
+    images: [
+      "/projects/krafs/1.png",
+      "/projects/krafs/2.png",
+      "/projects/krafs/3.png"
+    ],
   },
   {
     id: "verdant",
@@ -117,17 +130,53 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/Pilalz/verdant",
     featured: true,
     year: "2023",
+    images: [
+      "/projects/verdant/1.png",
+      "/projects/verdant/2.png",
+      "/projects/verdant/3.png",
+      "/projects/verdant/4.png",
+      "/projects/verdant/5.png"
+    ],
   },
   {
     id: "tokosusubahagia",
     title: "Toko Susu Bahagia",
     description: "Platform *e-commerce omnichannel* ritel kebutuhan bayi dengan integrasi manajemen stok berbasis FEFO (pencegahan kedaluwarsa), pelacakan pesanan instan, dan notifikasi WhatsApp otomatis.",
     tags: ["Laravel", "PHP", "MySQL", "Bootstrap", "Foonte API"],
-    category: "Full Stack",
+    category: "Web App",
     liveUrl: "https://example.com/devpulse", //Gada
     githubUrl: "https://github.com/Pilalz/Website-E-Comerce-Toko-Susu-Bahagia-",
     featured: false,
     year: "2024",
+    images: [
+      "/projects/tsb/1.png",
+      "/projects/tsb/2.png",
+      "/projects/tsb/3.png",
+      "/projects/tsb/4.png",
+      "/projects/tsb/5.png",
+      "/projects/tsb/6.png",
+      "/projects/tsb/7.png",
+      "/projects/tsb/8.png",
+      "/projects/tsb/9.png",
+      "/projects/tsb/10.png",
+      "/projects/tsb/11.png"
+    ],
+  },
+  {
+    id: "rsudsindangbarang",
+    title: "RSUD Sindangbarang",
+    description: "Portal showcase modern RSUD Sindangbarang dengan integrasi teknologi Smart Agriculture 4.0, katalog produk riset, dan layanan pelatihan agribisnis.",
+    tags: ["Laravel", "PHP", "Bootstrap", "MySQL", "JavaScript"],
+    category: "Web App",
+    liveUrl: "#",// Gada
+    githubUrl: "https://github.com/Pilalz/Website_RS-Sindangbarang",
+    featured: true,
+    year: "2025",
+    images: [
+      "/projects/rsud/1.png",
+      "/projects/rsud/2.png",
+      "/projects/rsud/3.png"
+    ],
   },
   {
     id: "asset-management",
@@ -139,7 +188,32 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/Pilalz/asset-management",
     featured: false,
     year: "2025",
-  }
+    images: [
+      "/projects/am/1.png",
+      "/projects/am/2.png",
+      "/projects/am/3.png",
+      "/projects/am/4.png",
+      "/projects/am/5.png"
+    ],
+  },
+  {
+    id: "greenhouse",
+    title: "Greenhouse",
+    description: "Portal showcase modern Teaching Factory Greenhouse SV IPB dengan integrasi teknologi Smart Agriculture 4.0, katalog produk riset, dan layanan pelatihan agribisnis.",
+    tags: ["Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    category: "Web App",
+    liveUrl: "https://example.com/omnicommerce",// Gada
+    githubUrl: "https://github.com/Pilalz/greenhouse-web",
+    featured: true,
+    year: "2026",
+    images: [
+      "/projects/greenhouse/img1.png",
+      "/projects/greenhouse/img2.png",
+      "/projects/greenhouse/img3.png",
+      "/projects/greenhouse/img4.png",
+      "/projects/greenhouse/img5.png"
+    ],
+  },
 ];
 
 export const experiencesData: Experience[] = [
@@ -177,40 +251,22 @@ export const experiencesData: Experience[] = [
 export const achievementsData: Achievement[] = [
   {
     id: "ach-1",
-    title: "Meta Frontend Developer Professional Certificate",
-    issuer: "Meta / Coursera",
-    date: "Desember 2023",
-    credentialUrl: "https://coursera.org",
-    description: "Sertifikasi profesional komprehensif yang mencakup React, JavaScript tingkat lanjut, UX design principles, dan Version Control.",
-    badgeType: "Certification",
+    title: "Juara 2 Prototype Mobile Apps",
+    issuer: "Cyber Tech 2023 / Cyber University",
+    date: "Juli 2023",
+    credentialUrl: "https://drive.google.com/file/d/1rH6g5H_2UXf2ADx4-fBOczouiMn0Zn54/view?usp=sharing",
+    description: "Juara 2 Lomba Prototype Mobile Apps untuk implementasi sistem pembayaran digital dengan berbagai metode pembayaran bernama 'Flexipay'",
+    badgeType: "Competition",
   },
   {
     id: "ach-2",
-    title: "Juara 1 Hackathon Nasional Inovasi Digital",
-    issuer: "Kemenkominfo & TechHub ID",
-    date: "Oktober 2023",
-    credentialUrl: "https://example.com/hackathon",
-    description: "Mengembangkan solusi web real-time agrikultur pintar yang menghubungkan petani lokal langsung dengan distributor tanpa perantara.",
-    badgeType: "Hackathon",
-  },
-  {
-    id: "ach-3",
-    title: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services (AWS)",
-    date: "Juni 2023",
-    credentialUrl: "https://aws.amazon.com/verification",
-    description: "Validasi pemahaman menyeluruh tentang infrastruktur cloud AWS, keamanan, arsitektur dasar, dan model deployment.",
+    title: "Certificate of Competency",
+    issuer: "PT. Java Web Media Edukasi Indonesia & SMK Taruna Bangsa",
+    date: "Mei 2022",
+    credentialUrl: "https://drive.google.com/file/d/11dIYfxQo-vhaBtofvlBJYumXQ4os1u-E/view?usp=sharing",
+    description: "Sertifikasi Uji Kompetensi Keahlian pada Materi Pemrograman Aplikasi Berbasis Desktop menggunakan VB.Net",
     badgeType: "Certification",
-  },
-  {
-    id: "ach-4",
-    title: "Best Graduation Project Award",
-    issuer: "Fakultas Ilmu Komputer",
-    date: "September 2022",
-    credentialUrl: "https://example.com/award",
-    description: "Penghargaan skripsi terbaik dalam kategori implementasi sistem terdistribusi dan komputasi awan.",
-    badgeType: "Award",
-  },
+  }
 ];
 
 export const educationData: EducationItem[] = [
@@ -249,7 +305,7 @@ export const skillCategories: SkillCategory[] = [
     title: "Bahasa Pemrograman",
     description: "Bahasa utama yang digunakan dalam pengembangan frontend, backend, dan scripting.",
     skills: [
-      { name: "TypeScript", level: "Advanced" },
+      { name: "TypeScript", level: "Proficient" },
       { name: "JavaScript (ES6+)", level: "Advanced" },
       { name: "HTML5 & Semantic UI", level: "Advanced" },
       { name: "CSS3 / Modern Styling", level: "Advanced" },
@@ -261,12 +317,11 @@ export const skillCategories: SkillCategory[] = [
     title: "Frameworks & Libraries",
     description: "Ekosistem frontend dan backend modern untuk membangun aplikasi web cepat dan skalabel.",
     skills: [
-      { name: "Next.js (App Router)", level: "Advanced" },
-      { name: "React.js", level: "Advanced" },
+      { name: "Next.js (App Router)", level: "Proficient" },
+      { name: "React.js", level: "Proficient" },
       { name: "Tailwind CSS", level: "Advanced" },
       { name: "Node.js & Express", level: "Proficient" },
-      { name: "Prisma ORM", level: "Proficient" },
-      { name: "Zustand & Redux", level: "Proficient" },
+      { name: "Laravel", level: "Advanced" },
     ],
   },
   {
@@ -275,8 +330,9 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: "PostgreSQL", level: "Proficient" },
       { name: "MySQL", level: "Proficient" },
-      { name: "MongoDB", level: "Familiar" },
-      { name: "Supabase", level: "Proficient" },
+      { name: "MongoDB", level: "Proficient" },
+      { name: "SQL Server", level: "Familiar" },
+      { name: "Supabase", level: "Familiar" },
       { name: "Redis", level: "Familiar" },
       { name: "RESTful APIs", level: "Advanced" },
     ],
@@ -285,12 +341,12 @@ export const skillCategories: SkillCategory[] = [
     title: "Tools & Workflow",
     description: "Peralatan kerja sehari-hari untuk version control, testing, container, dan deployment.",
     skills: [
-      { name: "Git & GitHub", level: "Advanced" },
+      { name: "Git & GitHub", level: "Proficient" },
       { name: "Docker", level: "Familiar" },
-      { name: "Vercel", level: "Advanced" },
+      { name: "Vercel", level: "Familiar" },
       { name: "VS Code", level: "Advanced" },
-      { name: "Figma (Handoff & UI)", level: "Proficient" },
-      { name: "Postman", level: "Proficient" },
+      { name: "Figma", level: "Proficient" },
+      { name: "Postman", level: "Familiar" },
     ],
   },
 ];

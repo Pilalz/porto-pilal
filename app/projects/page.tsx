@@ -5,7 +5,7 @@ import ProjectCard from "@/components/ProjectCard";
 import { projectsData, Project } from "@/data/portfolioData";
 import { Layers, FolderGit2 } from "lucide-react";
 
-const categories = ["All", "Full Stack", "Web App", "UI/UX"] as const;
+const categories = ["All", "Web App", "Mobile App", "UI/UX"] as const;
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
