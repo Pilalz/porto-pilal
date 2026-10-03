@@ -90,7 +90,7 @@ export const featuredTechStack = [
 
 export const projectsData: Project[] = [
   {
-    id: "flexipay",
+    id: "prj-1",
     title: "FlexiPay",
     description: "Portal showcase modern untuk implementasi sistem pembayaran digital dengan berbagai metode pembayaran.",
     tags: ["Figma", "UI/UX"],
@@ -105,12 +105,12 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    id: "krafs",
+    id: "prj-2",
     title: "KRAFS Mobile Apps",
-    description: "Dashboard analitik kolaboratif untuk tim pengembang dengan visualisasi metrik performa dan pipeline deployment.", //BLOM
+    description: "Aplikasi mobile untuk manajemen produksi di KRAFS dengan sistem penilaian performa tim produksi.",
     tags: ["Flutter", "Dart", "Android Studio", "MongoDB"],
     category: "Mobile App",
-    liveUrl: "https://example.com/flowsync", // Gada
+    liveUrl: "#",
     githubUrl: "https://github.com/Pilalz/KRAFS-MOBILE",
     featured: true,
     year: "2023",
@@ -121,12 +121,12 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    id: "verdant",
+    id: "prj-3",
     title: "Verdant Coffee",
     description: "Aplikasi web operasional restoran dengan integrasi self-ordering via QR meja, sistem POS real-time, serta analitik dan manajemen bisnis berbasis Laravel.",
     tags: ["Laravel", "PHP", "Bootstrap", "MySQL", "JavaScript"],
     category: "Web App",
-    liveUrl: "https://example.com/mindcanvas", // GADA
+    liveUrl: "#", // GADA
     githubUrl: "https://github.com/Pilalz/verdant",
     featured: true,
     year: "2023",
@@ -139,12 +139,12 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    id: "tokosusubahagia",
+    id: "prj-4",
     title: "Toko Susu Bahagia",
-    description: "Platform *e-commerce omnichannel* ritel kebutuhan bayi dengan integrasi manajemen stok berbasis FEFO (pencegahan kedaluwarsa), pelacakan pesanan instan, dan notifikasi WhatsApp otomatis.",
+    description: "Platform e-commerce ritel kebutuhan bayi dengan integrasi manajemen stok berbasis FEFO (pencegahan kedaluwarsa), pelacakan pesanan instan, dan notifikasi WhatsApp otomatis.",
     tags: ["Laravel", "PHP", "MySQL", "Bootstrap", "Foonte API"],
     category: "Web App",
-    liveUrl: "https://example.com/devpulse", //Gada
+    liveUrl: "#",
     githubUrl: "https://github.com/Pilalz/Website-E-Comerce-Toko-Susu-Bahagia-",
     featured: false,
     year: "2024",
@@ -163,12 +163,12 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    id: "rsudsindangbarang",
+    id: "prj-5",
     title: "RSUD Sindangbarang",
     description: "Portal showcase modern RSUD Sindangbarang dengan integrasi teknologi Smart Agriculture 4.0, katalog produk riset, dan layanan pelatihan agribisnis.",
     tags: ["Laravel", "PHP", "Bootstrap", "MySQL", "JavaScript"],
     category: "Web App",
-    liveUrl: "#",// Gada
+    liveUrl: "#",
     githubUrl: "https://github.com/Pilalz/Website_RS-Sindangbarang",
     featured: true,
     year: "2025",
@@ -179,12 +179,12 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    id: "asset-management",
+    id: "prj-6",
     title: "Asset Management",
-    description: "Koleksi komponen UI aksesibel dan modular berbasis Tailwind CSS dan Radix Primitives.",
+    description: "Sistem manajemen aset berbasis web dengan autentikasi multi-aktor, pelacakan status real-time, riwayat audit trail, dan notifikasi terintegrasi.",
     tags: ["Laravel", "Tailwind CSS", "PHP", "Node.js", "Redis", "PostgreSQL"],
     category: "Web App",
-    liveUrl: "https://example.com/zenith-ui", //Gada
+    liveUrl: "#",
     githubUrl: "https://github.com/Pilalz/asset-management",
     featured: false,
     year: "2025",
@@ -197,12 +197,12 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    id: "greenhouse",
+    id: "prj-7",
     title: "Greenhouse",
     description: "Portal showcase modern Teaching Factory Greenhouse SV IPB dengan integrasi teknologi Smart Agriculture 4.0, katalog produk riset, dan layanan pelatihan agribisnis.",
     tags: ["Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion"],
     category: "Web App",
-    liveUrl: "https://example.com/omnicommerce",// Gada
+    liveUrl: "#",
     githubUrl: "https://github.com/Pilalz/greenhouse-web",
     featured: true,
     year: "2026",
@@ -212,6 +212,41 @@ export const projectsData: Project[] = [
       "/projects/greenhouse/img3.png",
       "/projects/greenhouse/img4.png",
       "/projects/greenhouse/img5.png"
+    ],
+  },
+  {
+    id: "prj-8",
+    title: "Mail Tracker",
+    description: "Sistem manajemen surat keluar masuk berbasis web dengan autentikasi multi-aktor, pelacakan status real-time, riwayat audit trail, dan notifikasi terintegrasi.",
+    tags: ["Laravel", "Filament", "PHP", "Livewire", "Alpine.js", "Tailwind CSS", "PostgreSQL", "Node.js"],
+    category: "Web App",
+    liveUrl: "#",
+    githubUrl: "https://github.com/Pilalz/arsip-surat",
+    featured: true,
+    year: "2026",
+    images: [
+      "/projects/arsip-surat/1.png",
+      "/projects/arsip-surat/2.png",
+      "/projects/arsip-surat/3.png",
+      "/projects/arsip-surat/4.png",
+      "/projects/arsip-surat/5.png"
+    ],
+  },
+  {
+    id: "prj-9",
+    title: "Meeting Ticketing System",
+    description: "Sistem tiket untuk manajemen meeting room.",
+    tags: ["React", "Vite", "Tailwind CSS", "Lucide Icons", "Node.js", "Express.js", "PostgreSQL", "Rest API"],
+    category: "Web App",
+    liveUrl: "#",
+    githubUrl: "https://github.com/Pilalz/ticketing-admin-frontend",
+    featured: true,
+    year: "2026",
+    images: [
+      "/projects/ticketing/1.png",
+      "/projects/ticketing/2.png",
+      "/projects/ticketing/3.png",
+      "/projects/ticketing/4.png"
     ],
   },
 ];
