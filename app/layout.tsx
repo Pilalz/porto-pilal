@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { LanguageProvider } from "@/context/LanguageContext";
 import AbstractBackground from "@/components/AbstractBackground";
 
 const geistSans = Geist({
@@ -19,11 +20,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Rafi Hilal Zahir | Software Engineer & Web Developer",
   description:
-    "Portofolio pribadi Rafi Hilal Zahir - Software Engineer & Web Developer yang berfokus pada Next.js, TypeScript, React, dan modern web performance.",
+    "Portfolio of Rafi Hilal Zahir - Full Stack Software Engineer specializing in Next.js, TypeScript, React, and high-performance web systems.",
   keywords: [
     "Portfolio",
     "Web Developer",
     "Software Engineer",
+    "Full Stack Developer",
     "Next.js",
     "TypeScript",
     "React",
@@ -40,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="id"
+      lang="en"
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
@@ -51,10 +53,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
-          <AbstractBackground />
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <LanguageProvider>
+            <AbstractBackground />
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
