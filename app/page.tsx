@@ -288,7 +288,7 @@ export const productionStack = {
       </section>
 
       {/* Architectural Stats Bar with gap-px grid divider */}
-      <section className="my-8">
+      {/* <section className="my-8">
         <div className="overflow-hidden rounded-2xl border border-zinc-200/90 bg-zinc-200/80 shadow-xs dark:border-zinc-800/90 dark:bg-zinc-800/80">
           <div className="grid grid-cols-2 gap-px lg:grid-cols-4">
             {statsList.map((stat, idx) => (
@@ -306,7 +306,7 @@ export const productionStack = {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Categorized Tech Stack Section */}
       <section className="py-12">

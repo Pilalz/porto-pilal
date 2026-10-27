@@ -392,45 +392,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       {isModalOpen && mounted && createPortal(
         <div
           onClick={() => setIsModalOpen(false)}
-          className="animate-fade-in-up fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+          className="animate-fade-in-up fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm sm:p-6"
           role="dialog"
           aria-modal="true"
           aria-labelledby={`modal-title-${project.id}`}
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative max-h-[92vh] w-full max-w-4xl overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl dark:border-zinc-800 dark:bg-zinc-950"
+            className="relative flex flex-col lg:flex-row max-h-[90vh] w-full max-w-5xl overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl dark:border-zinc-800 dark:bg-zinc-950"
           >
-            {/* Modal Header */}
-            <div className="flex items-center justify-between border-b border-zinc-200 px-5 py-3.5 dark:border-zinc-800">
-              <div className="flex items-center gap-2">
-                <span className="rounded-md bg-zinc-100 px-2 py-0.5 text-xs font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
-                  {project.category}
-                </span>
-                <h4
-                  id={`modal-title-${project.id}`}
-                  className="text-sm font-bold text-zinc-900 dark:text-zinc-100"
-                >
-                  {project.title}
-                </h4>
-                {totalSlides > 1 && !project.videoUrl && (
-                  <span className="rounded bg-zinc-100 px-2 py-0.5 font-mono text-[11px] text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
-                    {modalSlide + 1} / {totalSlides}
-                  </span>
-                )}
-              </div>
-              <button
-                type="button"
-                onClick={() => setIsModalOpen(false)}
-                className="inline-flex min-h-[40px] min-w-[40px] items-center justify-center rounded-lg p-2 text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
-                aria-label={language === "en" ? "Close preview modal" : "Tutup preview"}
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
-
-            {/* Modal Media Body with Carousel */}
-            <div className="relative aspect-16/10 w-full overflow-hidden bg-black select-none">
+            {/* Left Column: Media (Image / Video Preview & Carousel) */}
+            <div className="relative aspect-16/10 lg:aspect-auto w-full lg:w-3/5 min-h-[260px] sm:min-h-[340px] lg:min-h-[480px] bg-zinc-950 flex items-center justify-center overflow-hidden select-none">
               {project.videoUrl ? (
                 <video
                   src={project.videoUrl}
@@ -467,7 +439,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     onClick={() =>
                       setModalSlide((prev) => (prev - 1 + totalSlides) % totalSlides)
                     }
-                    className="absolute top-1/2 left-3 -translate-y-1/2 rounded-full border border-white/30 bg-black/60 p-2.5 text-white transition-all hover:scale-110 hover:bg-black/90 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white active:scale-95"
+                    className="absolute top-1/2 left-3 -translate-y-1/2 rounded-full border border-white/20 bg-black/60 p-2 text-white transition-all hover:scale-110 hover:bg-black/90 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white active:scale-95"
                     aria-label={language === "en" ? "Previous slide" : "Slide sebelumnya"}
                   >
                     <ChevronLeft className="h-5 w-5" />
@@ -477,14 +449,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     onClick={() =>
                       setModalSlide((prev) => (prev + 1) % totalSlides)
                     }
-                    className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full border border-white/30 bg-black/60 p-2.5 text-white transition-all hover:scale-110 hover:bg-black/90 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white active:scale-95"
+                    className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full border border-white/20 bg-black/60 p-2 text-white transition-all hover:scale-110 hover:bg-black/90 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white active:scale-95"
                     aria-label={language === "en" ? "Next slide" : "Slide berikutnya"}
                   >
                     <ChevronRight className="h-5 w-5" />
                   </button>
 
                   {/* Thumbnail Bar in Modal */}
-                  <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-black/60 px-3 py-1.5 backdrop-blur-xs">
+                  <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-black/70 px-3 py-1.5 backdrop-blur-xs">
                     {mediaList.map((_, idx) => (
                       <button
                         key={idx}
@@ -503,31 +475,76 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               )}
             </div>
 
-            {/* Modal Footer Description & Links */}
-            <div className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
-              <div className="max-w-lg space-y-1">
-                <p className="text-xs leading-relaxed text-zinc-600 dark:text-zinc-300">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-1 pt-1">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-[10px] text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
-                    >
-                      {tag}
+            {/* Right Column: Project Details & Actions */}
+            <div className="flex flex-1 flex-col justify-between overflow-y-auto p-5 sm:p-6 lg:p-7">
+              {/* Top details content */}
+              <div className="space-y-4">
+                {/* Header: Category Badge, Slide indicator & Close Button */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs font-semibold text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
+                      {project.category}
                     </span>
-                  ))}
+                    {totalSlides > 1 && !project.videoUrl && (
+                      <span className="rounded bg-zinc-100 px-2 py-0.5 font-mono text-[11px] text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
+                        {modalSlide + 1} / {totalSlides}
+                      </span>
+                    )}
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setIsModalOpen(false)}
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
+                    aria-label={language === "en" ? "Close preview modal" : "Tutup preview"}
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
+
+                {/* Project Title */}
+                <h3
+                  id={`modal-title-${project.id}`}
+                  className="text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl dark:text-zinc-100"
+                >
+                  {project.title}
+                </h3>
+
+                {/* Project Description */}
+                <div>
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+                    {language === "en" ? "About Project" : "Tentang Proyek"}
+                  </h4>
+                  <p className="mt-1.5 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Tech Stack / Tags */}
+                <div>
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+                    {language === "en" ? "Technologies" : "Teknologi"}
+                  </h4>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-md bg-zinc-100 px-2 py-1 font-mono text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2">
+              {/* Bottom Actions */}
+              <div className="mt-6 flex flex-wrap items-center gap-2.5 border-t border-zinc-100 pt-5 dark:border-zinc-800/80">
                 {project.liveUrl && (
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex min-h-[40px] items-center gap-1.5 rounded-lg bg-zinc-900 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-zinc-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-zinc-400 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+                    className="inline-flex flex-1 min-h-[42px] items-center justify-center gap-2 rounded-lg bg-zinc-900 px-4 py-2 text-xs font-semibold text-white transition-all hover:bg-zinc-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-zinc-400 active:scale-95 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
                   >
                     <span>{language === "en" ? "Visit Demo" : "Kunjungi Demo"}</span>
                     <ExternalLink className="h-3.5 w-3.5" />
@@ -538,7 +555,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex min-h-[40px] items-center gap-1.5 rounded-lg border border-zinc-200 px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-zinc-50 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-zinc-400 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-900"
+                    className="inline-flex min-h-[42px] items-center justify-center gap-2 rounded-lg border border-zinc-200 px-4 py-2 text-xs font-semibold text-zinc-700 hover:bg-zinc-50 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-zinc-400 active:scale-95 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-900"
                   >
                     <GithubIcon className="h-3.5 w-3.5" />
                     <span>{language === "en" ? "Code" : "Kode"}</span>

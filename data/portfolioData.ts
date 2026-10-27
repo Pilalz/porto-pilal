@@ -92,8 +92,13 @@ export const projectsData: Project[] = [
   {
     id: "prj-9",
     title: "Meeting Ticketing System",
-    description: "Sistem tiket untuk manajemen meeting room.",
-    tags: ["React", "Vite", "Tailwind CSS", "Lucide Icons", "Node.js", "Express.js", "PostgreSQL", "Rest API"],
+    description: 
+    `
+    Guest Ticketing System fullstack berbasis 3 aplikasi terpisah (REST API backend, dashboard admin, dan portal direktur) dengan manajemen lifecycle 
+    tiket end-to-end dan konfigurasi CORS per-origin. Dilengkapi validasi past-datetime, statistik harian, serta dashboard direktur interaktif (React + Vite) 
+    bergaya Google Calendar dengan auto-polling untuk sinkronisasi data real-time.
+    `,
+    tags: ["React", "Node.js", "Express.js", "PostgreSQL", "Next.js", "Vite", "Tailwind CSS", "Lucide Icons", "Rest API"],
     category: "Web App",
     liveUrl: "#",
     githubUrl: "https://github.com/Pilalz/ticketing-admin-frontend",
@@ -109,8 +114,13 @@ export const projectsData: Project[] = [
   {
     id: "prj-8",
     title: "Mail Tracker",
-    description: "Sistem manajemen surat keluar masuk berbasis web dengan autentikasi multi-aktor, pelacakan status real-time, riwayat audit trail, dan notifikasi terintegrasi.",
-    tags: ["Laravel", "Filament", "PHP", "Livewire", "Alpine.js", "Tailwind CSS", "PostgreSQL", "Node.js"],
+    description: 
+    `
+    Sistem Manajemen Surat berbasis Filament Panel dengan fitur live camera capture, RBAC, audit trail, dan private storage streaming berpassword.
+     Dioptimalkan menggunakan asynchronous database queue untuk memangkas latensi form submission dari ~6 detik menjadi <500 ms (>90% lebih cepat) 
+     serta mengeliminasi 100% orphaned files via cascade cleanup.
+    `,
+    tags: ["Laravel", "Filament", "PHP", "Livewire", "Alpine.js", "Tailwind CSS", "PostgreSQL", "PHPUnit"],
     category: "Web App",
     liveUrl: "#",
     githubUrl: "https://github.com/Pilalz/arsip-surat",
@@ -145,7 +155,12 @@ export const projectsData: Project[] = [
   {
     id: "prj-6",
     title: "Asset Management",
-    description: "Sistem manajemen aset berbasis web dengan autentikasi multi-aktor, pelacakan status real-time, riwayat audit trail, dan notifikasi terintegrasi.",
+    description: 
+    `
+    Sistem Manajemen Aset Multi-Tenant berbasis Laravel untuk kalkulasi depresiasi (komersial & fiskal) dengan pelaporan real-time via SSE dan Redis 
+    Queue Batching. Dilengkapi Redis distributed lock, isolasi data global scope, dan audit trail, serta dioptimalkan via in-memory grouping dan bulk 
+    insert yang memangkas waktu proses dari 5 hari kerja menjadi <3 menit (>99% efisiensi).
+    `,
     tags: ["Laravel", "Tailwind CSS", "PHP", "Node.js", "Redis", "PostgreSQL"],
     category: "Web App",
     liveUrl: "#",
@@ -163,7 +178,12 @@ export const projectsData: Project[] = [
   {
     id: "prj-5",
     title: "RSUD Sindangbarang",
-    description: "Portal showcase modern RSUD Sindangbarang dengan integrasi teknologi Smart Agriculture 4.0, katalog produk riset, dan layanan pelatihan agribisnis.",
+    description: 
+    `
+    Portal showcase RSUD Sindangbarang berbasis Laravel dan MySQL yang mencakup 12+ modul operasional dengan proteksi RBAC bertingkat dan disk 
+    cleanup otomatis untuk memblokir orphan files. Dioptimalkan lewat Eloquent Eager Loading yang memangkas query database hingga ~65% serta 
+    agregasi data langsung yang menjaga latensi dashboard di bawah 200 ms.
+    `,
     tags: ["Laravel", "PHP", "Bootstrap", "MySQL", "JavaScript"],
     category: "Web App",
     liveUrl: "#",
@@ -179,7 +199,12 @@ export const projectsData: Project[] = [
   {
     id: "prj-4",
     title: "Toko Susu Bahagia",
-    description: "Platform e-commerce ritel kebutuhan bayi dengan integrasi manajemen stok berbasis FEFO (pencegahan kedaluwarsa), pelacakan pesanan instan, dan notifikasi WhatsApp otomatis.",
+    description: 
+    `
+    Platform e-commerce kebutuhan bayi dan manajemen inventaris berbasis Laravel 11 & MySQL dengan transaksi atomik, alokasi stok FEFO otomatis, 
+    pelacakan pesanan berbasis UUID, serta notifikasi WhatsApp asinkron via Fonnte API. Dioptimalkan lewat Eager Loading yang memangkas eksekusi 
+    query hingga ~75% serta fitur ekspor laporan PDF instan (< 2 detik).
+    `,
     tags: ["Laravel", "PHP", "MySQL", "Bootstrap", "Foonte API"],
     category: "Web App",
     liveUrl: "#",
@@ -203,10 +228,16 @@ export const projectsData: Project[] = [
   {
     id: "prj-3",
     title: "Verdant Coffee",
-    description: "Aplikasi web operasional restoran dengan integrasi self-ordering via QR meja, sistem POS real-time, serta analitik dan manajemen bisnis berbasis Laravel.",
+    description: 
+    `
+    Aplikasi web POS dan self-ordering restoran (QR meja) berbasis Laravel & MySQL dengan katalog menu hierarkis, RBAC multi-role, serta 
+    keranjang belanja berbasis HTTP session yang meniadakan 100% database write overhead sebelum checkout. Dioptimalkan lewat agregasi 
+    query SQL yang memangkas konsumsi memori server sebesar ~35% serta penerapan standardisasi PSR-12 untuk menjamin konsistensi dan 
+    integritas data transaksi.
+    `,
     tags: ["Laravel", "PHP", "Bootstrap", "MySQL", "JavaScript"],
     category: "Web App",
-    liveUrl: "#", // GADA
+    liveUrl: "#",
     githubUrl: "https://github.com/Pilalz/verdant",
     featured: false,
     year: "2023",
@@ -221,8 +252,14 @@ export const projectsData: Project[] = [
   {
     id: "prj-2",
     title: "KRAFS Mobile Apps",
-    description: "Aplikasi mobile untuk manajemen produksi di KRAFS dengan sistem penilaian performa tim produksi.",
-    tags: ["Flutter", "Dart", "Android Studio", "MongoDB"],
+    description: 
+    `
+    Aplikasi mobile Android (Java, Volley, MongoDB Atlas) untuk katalog produk kopi dan keranjang belanja dinamis yang terintegrasi 
+    dengan AI Chatbot via OpenAI API. Dioptimalkan menggunakan caching Picasso dan ConstraintLayout pada RecyclerView yang memangkas 
+    waktu muat gambar hingga 45% (mencapai 60 FPS scrolling), serta dilengkapi manajemen sesi SharedPreferences, ViewBinding, dan 
+    penanganan error terpusat guna mencegah runtime crash.
+    `,
+    tags: ["Java", "Android SDK", "MongoDB", "AI", "OpenAI API"],
     category: "Mobile App",
     liveUrl: "#",
     githubUrl: "https://github.com/Pilalz/KRAFS-MOBILE",
@@ -231,7 +268,9 @@ export const projectsData: Project[] = [
     images: [
       "/projects/krafs/1.png",
       "/projects/krafs/2.png",
-      "/projects/krafs/3.png"
+      "/projects/krafs/3.png",
+      "/projects/krafs/4.png",
+      "/projects/krafs/5.png"
     ],
   },
   {
